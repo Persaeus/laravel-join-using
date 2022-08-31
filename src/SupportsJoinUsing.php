@@ -17,11 +17,8 @@ trait SupportsJoinUsing
 
     public function query()
     {
-        return new class (
-            $this,
-            $this->getQueryGrammar(),
-            $this->getPostProcessor()
-        ) extends Builder {
+        return new class($this, $this->getQueryGrammar(), $this->getPostProcessor()) extends Builder
+        {
             protected function newJoinClause(Builder $parentQuery, $type, $table)
             {
                 return new JoinUsingClause($parentQuery, $type, $table);

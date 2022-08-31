@@ -34,7 +34,8 @@ class ServiceProvider extends PackageServiceProvider
          * clause constraints.
          */
         $this->app->singleton('db.factory', function ($app) {
-            return new class ($app) extends ConnectionFactory {
+            return new class($app) extends ConnectionFactory
+            {
                 /**
                  * {@inheritDoc}
                  */
@@ -47,32 +48,38 @@ class ServiceProvider extends PackageServiceProvider
                     $arguments = [$connection, $database, $prefix, $config];
 
                     return match ($driver) {
-                        'mysql' => new class (...$arguments) extends MySqlConnection {
+                        'mysql' => new class(...$arguments) extends MySqlConnection
+                        {
                             use SupportsJoinUsing;
 
                             public function getQueryGrammarForJoinUsing(): Grammar
                             {
-                                return new class () extends MySqlGrammar {
+                                return new class() extends MySqlGrammar
+                                {
                                     use CompilesJoinUsing;
                                 };
                             }
                         },
-                        'pgsql' => new class (...$arguments) extends PostgresConnection {
+                        'pgsql' => new class(...$arguments) extends PostgresConnection
+                        {
                             use SupportsJoinUsing;
 
                             public function getQueryGrammarForJoinUsing(): Grammar
                             {
-                                return new class () extends PostgresGrammar {
+                                return new class() extends PostgresGrammar
+                                {
                                     use CompilesJoinUsing;
                                 };
                             }
                         },
-                        'sqlite' => new class (...$arguments) extends SQLiteConnection {
+                        'sqlite' => new class(...$arguments) extends SQLiteConnection
+                        {
                             use SupportsJoinUsing;
 
                             public function getQueryGrammarForJoinUsing(): Grammar
                             {
-                                return new class () extends SQLiteGrammar {
+                                return new class() extends SQLiteGrammar
+                                {
                                     use CompilesJoinUsing;
                                 };
                             }

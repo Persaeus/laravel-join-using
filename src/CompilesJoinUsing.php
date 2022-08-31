@@ -10,13 +10,13 @@ trait CompilesJoinUsing
     {
         if (
             $query instanceof JoinUsingClause &&
-            !is_null($query->using)
+            ! is_null($query->using)
         ) {
             $columns = collect($query->using)
                 ->map(fn ($column) => $this->wrap($column))
                 ->implode(',');
 
-            return 'using (' . $columns . ')';
+            return 'using ('.$columns.')';
         }
 
         return parent::compileWheres($query);

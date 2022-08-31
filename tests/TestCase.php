@@ -2,8 +2,8 @@
 
 namespace Nihilsen\LaravelJoinUsing\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Nihilsen\LaravelJoinUsing\ServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
