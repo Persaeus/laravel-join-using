@@ -15,8 +15,6 @@ class JoinUsingClause extends JoinClause
 
     /**
      * Set the columns for the USING subclause.
-     *
-     * @param  string  ...$columns
      */
     public function using(string ...$columns)
     {
