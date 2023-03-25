@@ -2,8 +2,8 @@
 
 namespace Nihilsen\LaravelJoinUsing\Tests;
 
+use Nihilsen\LaravelJoinUsing\JoinUsingServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Nihilsen\LaravelJoinUsing\ServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            ServiceProvider::class,
+            JoinUsingServiceProvider::class,
         ];
     }
 

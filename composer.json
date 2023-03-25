@@ -53,7 +53,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Nihilsen\\LaravelJoinUsing\\ServiceProvider"
+                "Nihilsen\\LaravelJoinUsing\\JoinUsingServiceProvider"
             ]
         }
     },
